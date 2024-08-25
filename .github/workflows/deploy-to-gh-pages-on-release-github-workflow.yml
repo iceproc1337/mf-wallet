@@ -7,7 +7,7 @@ on:
 jobs:
   deployment:
     runs-on: gh-pages
-    environment: production
+    environment: github-pages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
