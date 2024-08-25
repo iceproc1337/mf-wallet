@@ -1,6 +1,6 @@
 {
-  "name": "vue-wallet-framework7",
-  "version": "0.0.0",
+  "name": "mf-wallet",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
