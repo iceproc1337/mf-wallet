@@ -10,6 +10,11 @@ import { viteExternalsPlugin } from 'vite-plugin-externals'
 // Visualize the bundle
 import { visualizer } from "rollup-plugin-visualizer";
 
+import dotenv from 'dotenv';
+// Load environment variables from .env file
+dotenv.config();
+const isVisualizerEnabled = process.env.VITE_VISUALIZER === 'true';
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -30,8 +35,9 @@ export default defineConfig({
         }
       }
     },
-    visualizer({ open: true }),
-  ],
+    // Conditionally include the visualizer plugin
+    isVisualizerEnabled && visualizer({ open: true }),
+  ].filter(Boolean), // Filter out false values
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
