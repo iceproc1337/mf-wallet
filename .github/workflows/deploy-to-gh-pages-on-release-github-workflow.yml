@@ -25,6 +25,13 @@ jobs:
       - name: Run build
         run: npm run build
 
+      - name: Archive artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vue-3-vite-webapp
+          path: |
+            ./dist
+
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
