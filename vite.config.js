@@ -17,6 +17,8 @@ const isVisualizerEnabled = process.env.VITE_VISUALIZER === 'true';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // Solve problem when deploying in relative path
+  base: './',
   plugins: [
     vue(),
     viteExternalsPlugin({

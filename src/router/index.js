@@ -8,6 +8,13 @@ const router = createRouter({
       name: 'home',
       component: () => import('../views/HomeView.vue')
     },
+    // Solve problem when deploying in relative path
+    // https://stackoverflow.com/questions/63526486/vue-router-catch-all-wildcard-not-working
+    {
+      path: "/:catchAll(.*)",
+      name: 'catchAll',
+      component: () => import('../views/HomeView.vue')
+    }
   ]
 })
 
