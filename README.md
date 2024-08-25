@@ -1,4 +1,4 @@
-# mf-wallet
+# mf-wallet [![Deploy to gh-pages on release](https://github.com/iceproc1337/mf-wallet/actions/workflows/deploy-to-gh-pages-on-release-github-workflow.yml/badge.svg)](https://github.com/iceproc1337/mf-wallet/actions/workflows/deploy-to-gh-pages-on-release-github-workflow.yml) 
 
 This template should help get you started developing with Vue 3 in Vite.
 
