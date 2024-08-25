@@ -18,7 +18,8 @@ export default defineConfig({
       "vue": "Vue",
       "vue-router": "VueRouter",
       "vue-i18n": "VueI18n",
-      "pinia": "Pinia"
+      "pinia": "Pinia",
+      "framework7": "Framework7",
     }),
     // Use index_dev.html in development
     {
