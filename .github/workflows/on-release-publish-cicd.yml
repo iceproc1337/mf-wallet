@@ -59,6 +59,6 @@ jobs:
         run: ls -R
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}   # Recommended for this usage
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
