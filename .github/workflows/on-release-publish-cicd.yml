@@ -35,20 +35,20 @@ jobs:
       - name: Run build
         run: npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v4
         with:
-          name: ci-artifact
-          path: |
-            ./dist
+          path: ./dist
 
   publish:
     needs: build
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      pages: write
+      id-token: write
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/download-artifact@v4
         with:
@@ -59,7 +59,5 @@ jobs:
         run: ls -R
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./dist
+        id: deployment
+        uses: actions/deploy-pages@v4
