@@ -1,4 +1,4 @@
-# On a release is triggered, the workflow will build the project and deploy it to GitHub Pages. 
+# On a release is triggered, the workflow will build the project and deploy it to GitHub Pages.
 # The build job will upload the dist directory as an artifact.
 # The publish job will download the artifact and deploy it to GitHub Pages.
 name: On Release Publish CI/CD
@@ -27,7 +27,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -52,6 +52,9 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: ci-artifact
+
+      - name: Display structure of downloaded files
+        run: ls -R
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
