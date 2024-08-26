@@ -12,30 +12,31 @@
   </noscript>
   <!-- defer scripts -->
   <!-- Vue js -->
-  <script src="https://cdn.jsdelivr.net/npm/vue@3.4.38/dist/vue.runtime.global.prod.js"
+  <script defer src="https://cdn.jsdelivr.net/npm/vue@3.4.38/dist/vue.runtime.global.prod.js"
     integrity="sha256-/az+LN/PrG2Nwok9CKegVX2dOMIacOHEvWPNEvG2tPc=" crossorigin="anonymous"></script>
   <!-- Vue Router -->
-  <script src="https://cdn.jsdelivr.net/npm/vue-router@4.4.3/dist/vue-router.global.prod.js"
+  <script defer src="https://cdn.jsdelivr.net/npm/vue-router@4.4.3/dist/vue-router.global.prod.js"
     integrity="sha256-6rAkTVdmivgd7BGmv/NkC1h5BKddSXqxEeYCPmPTJWU=" crossorigin="anonymous"></script>
   <!-- Pinia and dependency -->
-  <script src="https://cdn.jsdelivr.net/npm/vue-demi@0.14.10/lib/index.iife.min.js"
+  <script defer src="https://cdn.jsdelivr.net/npm/vue-demi@0.14.10/lib/index.iife.min.js"
     integrity="sha384-J1gxSEZ8n5IZ0IvIyXKA4evkdp7MddOpcLGYWlWEECZZ/rVAUoyAGLtx8Ys9EA3K"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/pinia@2.2.2/dist/pinia.iife.prod.js"
+  <script defer src="https://cdn.jsdelivr.net/npm/pinia@2.2.2/dist/pinia.iife.prod.js"
     integrity="sha256-zokDYCeZPBo4iCI9FAPq4CaNExXC8P9zLPcFoshM0x4=" crossorigin="anonymous"></script>
   <!-- Vue-i18n -->
-  <script src="https://cdn.jsdelivr.net/npm/vue-i18n@9.14.0/dist/vue-i18n.global.prod.js"
+  <script defer src="https://cdn.jsdelivr.net/npm/vue-i18n@9.14.0/dist/vue-i18n.global.prod.js"
     integrity="sha256-eJSkUvTa7xtDI+n1Yzv3dC530wEIte8kuI9dA5yxuG8=" crossorigin="anonymous"></script>
   <!-- Framework7 -->
-  <script src="https://cdn.jsdelivr.net/npm/framework7@8.3.3/framework7-bundle.min.js"
+  <script defer src="https://cdn.jsdelivr.net/npm/framework7@8.3.3/framework7-bundle.min.js"
     integrity="sha256-1r9ib4mhGW3+qxoxb4nz2z4GkQqNG/CUa4Emli2pL2I=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/framework7@8.3.3/framework7-bundle.min.css"
-    integrity="sha256-cK8qB/ROffwYFEJ4KDE1DKIQqES7GT1/VmrZr+KWfqw=" crossorigin="anonymous">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/framework7@8.3.3/framework7-bundle.min.css"
+    integrity="sha256-cK8qB/ROffwYFEJ4KDE1DKIQqES7GT1/VmrZr+KWfqw=" crossorigin="anonymous" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
 </head>
 
 <body>
   <div id="app"></div>
-  <script type="module" src="/src/main.js"></script>
+  <script defer type="module" src="/src/main.js"></script>
 </body>
 
 </html>
