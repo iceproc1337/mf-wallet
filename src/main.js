@@ -2,7 +2,7 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import Framework7 from 'framework7';
+import Framework7 from 'https://cdn.jsdelivr.net/npm/framework7@8.3.3/+esm';
 
 import App from './App.vue'
 import router from './router'
