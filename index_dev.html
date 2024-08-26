@@ -6,10 +6,62 @@
   <link rel="icon" href="/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vite App</title>
-  <!-- non-blocking, preload CSS -->
-  <!-- load CSS for users without javascript -->
-  <noscript>
-  </noscript>
+  <style type="text/css">
+    .loader-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* HTML: <div class="loader"></div> */
+    .loader {
+      width: 35px;
+      height: 80px;
+      position: relative;
+    }
+
+    .loader:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 3px 5px;
+      border-top: 1px solid #bbb6aa;
+      border-bottom: 4px solid #bbb6aa;
+      background:
+        linear-gradient(#612329 0 0) bottom no-repeat content-box,
+        #e4e0d7;
+      mix-blend-mode: darken;
+      animation: l1 1.5s infinite linear;
+    }
+
+    .loader:before {
+      content: "";
+      position: absolute;
+      inset: -18px calc(50% - 2px) 8px;
+      background: #eb6b3e;
+      transform-origin: bottom;
+      transform: rotate(8deg);
+    }
+
+    @keyframes l1 {
+      0% {
+        background-size: 100% 100%
+      }
+
+      100% {
+        background-size: 100% 5%
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="loader-container">
+      <div class="loader"></div>
+    </div>
+  </div>
   <!-- defer scripts -->
   <!-- Vue js -->
   <script defer src="https://cdn.jsdelivr.net/npm/vue@3.4.38/dist/vue.runtime.global.js"
@@ -32,127 +84,6 @@
     integrity="sha256-cK8qB/ROffwYFEJ4KDE1DKIQqES7GT1/VmrZr+KWfqw=" crossorigin="anonymous" as="style"
     onload="this.onload=null;this.rel='stylesheet'" />
 
-  <style type="text/css">
-    /* Add your custom styles here */
-    .screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-    }
-
-    .loader {
-      width: 100%;
-      height: 15px;
-      text-align: center;
-    }
-
-    .dot {
-      position: relative;
-      width: 15px;
-      height: 15px;
-      margin: 0 2px;
-      display: inline-block;
-    }
-
-    .dot:first-child:before {
-      animation-delay: 0ms;
-    }
-
-    .dot:first-child:after {
-      animation-delay: 0ms;
-    }
-
-    .dot:last-child:before {
-      animation-delay: 200ms;
-    }
-
-    .dot:last-child:after {
-      animation-delay: 200ms;
-    }
-
-    .dot:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 15px;
-      height: 15px;
-      background-color: blue;
-      animation-name: dotHover;
-      animation-duration: 900ms;
-      animation-timing-function: cubic-bezier(.82, 0, .26, 1);
-      animation-iteration-count: infinite;
-      animation-delay: 100ms;
-      background: #efeff4;
-      border-radius: 100%;
-    }
-
-    .dot:after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      background: black;
-      box-shadow: 0px 0px 1px black;
-      opacity: .20;
-      width: 100%;
-      height: 3px;
-      left: 0;
-      bottom: -2px;
-      border-radius: 100%;
-      animation-name: dotShadow;
-      animation-duration: 900ms;
-      animation-timing-function: cubic-bezier(.82, 0, .26, 1);
-      animation-iteration-count: infinite;
-      animation-delay: 100ms;
-    }
-
-    @keyframes dotShadow {
-      0% {
-        transform: scaleX(1);
-      }
-
-      50% {
-        opacity: 0;
-        transform: scaleX(.6);
-      }
-
-      100% {
-        transform: scaleX(1);
-      }
-    }
-
-    @keyframes dotHover {
-      0% {
-        top: 0px;
-      }
-
-      50% {
-        top: -50px;
-        transform: scale(1.1);
-      }
-
-      100% {
-        top: 0;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div id="app">
-    <div class="screen">
-
-      <div class="loader">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-      </div>
-
-    </div>
-  </div>
   <script defer type="module" src="/src/main.js"></script>
 </body>
 
