@@ -1,8 +1,9 @@
 <script setup>
 import { onMounted } from 'vue'
+
 onMounted(() => {
-  framework7App.navbar.size('.navbar');
 })
+
 </script>
 
 <template>
