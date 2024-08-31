@@ -21,7 +21,10 @@ onMounted(async () => {
 </script>
 
 <template>
-  <RouterView />
+  <RouterView v-if="loadingStore.isLoaded"></RouterView>
+  <div class="loader-container" v-else>
+    <div class="loader"></div>
+  </div>
 </template>
 
 <style scoped></style>
