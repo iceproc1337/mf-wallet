@@ -1,7 +1,23 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, watch } from 'vue'
+import { useLoadingStore } from '../stores/loading';
+const loadingStore = useLoadingStore();
+
+const resizeNavbar = () => {
+  let framework7App = window.framework7App;
+  framework7App.navbar.size('.navbar');
+}
 
 onMounted(() => {
+  if (loadingStore.isLoaded) {
+    resizeNavbar();
+  } else {
+    watch(() => loadingStore.isLoaded, async () => {
+      if (loadingStore.isLoaded) {
+        resizeNavbar();
+      }
+    })
+  }
 })
 
 </script>

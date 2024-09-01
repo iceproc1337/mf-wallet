@@ -15,10 +15,17 @@ import dotenv from 'dotenv';
 dotenv.config();
 const isVisualizerEnabled = process.env.VITE_VISUALIZER === 'true';
 
+function getBase() {
+  if (!process.env["BASE_URL"]) {
+    throw new Error("BASE_URL environment variable is required");
+  }
+  return process.env["BASE_URL"];
+}
+
 // https://vitejs.dev/config/
 export default defineConfig({
   // Solve problem when deploying in relative path
-  base: './',
+  base: getBase(),
   plugins: [
     vue(),
     viteExternalsPlugin({
