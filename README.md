@@ -1,4 +1,4 @@
-# vue3-framework7-minimal-template [![On Release Publish CI/CD](https://github.com/iceproc1337/vue3-framework7-minimal-template/actions/workflows/on-release-publish-cicd.yml/badge.svg)](https://github.com/iceproc1337/vue3-framework7-minimal-template/actions/workflows/on-release-publish-cicd.yml)
+# mf-wallet [![On Release Publish CI/CD](https://github.com/iceproc1337/mf-wallet/actions/workflows/on-release-publish-cicd.yml/badge.svg)](https://github.com/iceproc1337/mf-wallet/actions/workflows/on-release-publish-cicd.yml)
 
 This template should help get you started developing with Vue 3 in Vite.
 
